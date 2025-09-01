@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://dx2fcqqpb4i4s"]
+
+[ext_resource type="PackedScene" uid="uid://bl508xnjg7w4d" path="res://scenes/platform.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://ehmcsd6vtsfn" path="res://scripts/main.gd" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dcxvd8sk8dsio" path="res://scenes/player.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dj3ndy0nb2o47" path="res://scenes/door.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dwgryqf8rcart" path="res://scenes/key.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://kg0sdex7y8j2" path="res://scenes/gem.tscn" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://b3wdwr05px4a6" path="res://scenes/enemy_b.tscn" id="6_tefeu"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_tbgi4")
+
+[node name="Door" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(348, 138)
+
+[node name="Key" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(1032, 239)
+
+[node name="Gem" parent="." instance=ExtResource("4_o6xl0")]
+position = Vector2(456, 464)
+
+[node name="Player" parent="." instance=ExtResource("2_sugp2")]
+position = Vector2(72, 430)
+jump_velocity = -600.0
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Platform" parent="World" instance=ExtResource("1_0wfyh")]
+position = Vector2(260, 550)
+scale = Vector2(8.13, 1)
+
+[node name="Platform5" parent="World" instance=ExtResource("1_0wfyh")]
+position = Vector2(619, 669)
+scale = Vector2(8.13, 1)
+
+[node name="Platform2" parent="World" instance=ExtResource("1_0wfyh")]
+position = Vector2(972, 544)
+scale = Vector2(8.13, 1)
+
+[node name="Platform3" parent="World" instance=ExtResource("1_0wfyh")]
+position = Vector2(1164, 358)
+scale = Vector2(8.13, 1)
+
+[node name="Platform4" parent="World" instance=ExtResource("1_0wfyh")]
+position = Vector2(580, 174)
+scale = Vector2(8.13, 1)
+
+[node name="EnemyB" parent="." groups=["EnemyB"] instance=ExtResource("6_tefeu")]
+position = Vector2(611, 439)
+
+[node name="EnemyB2" parent="." groups=["EnemyB"] instance=ExtResource("6_tefeu")]
+position = Vector2(1104, 92)
+
+[node name="SuccessLabel" type="Label" parent="."]
+offset_left = 281.0
+offset_top = 11.0
+offset_right = 416.0
+offset_bottom = 65.0
+text = "si se puede!"
+horizontal_alignment = 3
+justification_flags = 171
+
+[node name="HPLabel" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 75.0
+offset_bottom = 45.0
+text = "VIDA: 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
